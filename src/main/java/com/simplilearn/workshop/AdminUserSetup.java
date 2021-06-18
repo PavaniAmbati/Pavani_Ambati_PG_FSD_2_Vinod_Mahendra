@@ -22,31 +22,23 @@ public class AdminUserSetup extends HttpServlet {
 		
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		
+			
+		LoginUsers user = new LoginUsers();
 		
-		//session.beginTransaction();
-		//LoginUsers user = new LoginUsers();
-				
-		//begin a transaction
-		//session.beginTransaction();
-		
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("Login users");
-		
-		/*
+		session.beginTransaction();
 		//user.setID(1); 
 		   user.setUsername("Admin"); 
 		   user.setPassword("Admin"); 
 				
 		//execute database operations
 		session.save(user);
-				
-				//commit a transaction
 		session.getTransaction().commit();
-		*/
+
 		session.close();
-		
+				
 		HibernateUtils.getSessionFactory().close();
+		
+
 	}
 
 	

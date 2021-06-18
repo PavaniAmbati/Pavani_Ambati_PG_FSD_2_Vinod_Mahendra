@@ -1,5 +1,8 @@
 package com.simplilearn.workshop.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class LoginUsers {
 	
 	private int id;

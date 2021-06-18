@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.simplilearn.workshop.model.FlightRoute" table="flight_route">
+		<!-- primary key column in FlightRoute table -->
+		<id name="route_id" type="int">
+			<column name="route_id" />
+			<generator class="identity"/>
+		</id>
+
+		<property name="flightname" type="java.lang.String">
+			<column name="flightname" />
+		</property>
+		
+		<property name="sourcecity" type="java.lang.String">
+			<column name="sourcecity" />
+		</property>
+				
+		<property name="destinationcity" type="java.lang.String">
+			<column name="destinationcity" />
+		</property>
+		
+		<property name="price" type="java.lang.Float">
+			<column name="price" />
+		</property>
+
+		<list name="schedule" inverse="true" cascade="save-update">
+			<key column="route_id" not-null="true"/>
+			<list-index column="idx"/>
+			<one-to-many class="com.simplilearn.workshop.model.FlightSchedule"/>
+		</list>
+		
+	</class>
+</hibernate-mapping>

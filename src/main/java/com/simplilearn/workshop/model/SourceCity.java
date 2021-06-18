@@ -1,5 +1,8 @@
 package com.simplilearn.workshop.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class SourceCity {
 	
 	private int source_id;
@@ -24,5 +27,7 @@ public class SourceCity {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	
 	
 }

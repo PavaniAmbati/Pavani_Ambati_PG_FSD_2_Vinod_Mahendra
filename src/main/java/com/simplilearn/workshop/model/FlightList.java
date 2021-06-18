@@ -1,9 +1,12 @@
 package com.simplilearn.workshop.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class FlightList {
 	
 	private int flight_id;
-	private String name;
+	private String flight_name;
 	
 	public FlightList() {
 		super();
@@ -17,14 +20,17 @@ public class FlightList {
 		this.flight_id = flight_id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFlight_name() {
+		return flight_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFlight_name(String flight_name) {
+		this.flight_name = flight_name;
 	}
-	
-	
+
 
 }
+	
+	
+
+

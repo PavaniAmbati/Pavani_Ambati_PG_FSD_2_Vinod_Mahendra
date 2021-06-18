@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.simplilearn.workshop.model.RegistrationSale" table="registration">
+		<!-- primary key column in Users table -->
+		<id name="custid" type="int">
+			<column name="custid" />
+			<generator class="increment" />
+		</id>
+
+		<property name="firstname" type="java.lang.String">
+			<column name="firstname" />
+		</property>
+		
+		<property name="lastname" type="java.lang.String">
+			<column name="lastname" />
+		</property>
+				
+		<property name="email" type="java.lang.String">
+			<column name="email" />
+		</property>
+		
+		<property name="phone" type="java.lang.String">
+			<column name="phone" />
+		</property>
+		
+		<property name="flightname" type="java.lang.String">
+			<column name="flightname" />
+		</property>
+		
+		<property name="sourcecity" type="java.lang.String">
+			<column name="sourcecity" />
+		</property>
+		
+		<property name="destinationcity" type="java.lang.String">
+			<column name="destinationcity" />
+		</property>
+		
+		<property name="departuredate" type="java.lang.String">
+			<column name="departuredate" />
+		</property>
+		
+		<property name="arrivaldate" type="java.lang.String">
+			<column name="arrivaldate" />
+		</property>
+		
+		<property name="paymentmethod" type="java.lang.String">
+			<column name="paymentmethod" />
+		</property>
+		
+		<property name="cardnumber" type="java.lang.String">
+			<column name="cardnumber" />
+		</property>
+		
+		<property name="totalpaid" type="java.lang.Float">
+			<column name="totalpaid" />
+		</property>
+		
+		<property name="nooftravelers" type="int">
+			<column name="nooftravelers" />
+		</property>
+		
+		<property name="price" type="java.lang.Float">
+			<column name="price" />
+		</property>
+		
+		
+		
+	</class>
+</hibernate-mapping>

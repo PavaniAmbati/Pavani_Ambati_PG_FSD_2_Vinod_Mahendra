@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.simplilearn.workshop.model.FlightSchedule" table="flight_schedule">
+		<!-- primary key column in Users table -->
+		<id name="sched_id" type="int">
+			<column name="sched_id" />
+			<generator class="increment" />
+		</id>
+		
+		<many-to-one name="flightroute" class="com.simplilearn.workshop.model.FlightRoute" not-null = "true">
+			<column name = "route_id"/>
+		</many-to-one>
+		
+		<property name="flightname" type="java.lang.String">
+			<column name="flightname" />
+		</property>
+
+		<property name="departuredate" type="java.lang.String">
+			<column name="departuredate" />
+		</property>
+		
+		<property name="arrivaldate" type="java.lang.String">
+			<column name="arrivaldate" />
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

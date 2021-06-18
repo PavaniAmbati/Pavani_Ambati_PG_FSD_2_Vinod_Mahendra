@@ -67,10 +67,13 @@ e.printStackTrace();
 <title>AdminPage</title>
 </head>
 <body style="background-color:mintcream;">
-<h1 style="font-family:Gabriola; color:darkblue;font-size: 50px;">FlyAway</h1>
-<h2 style="font-family:Gabriola; color:darkblue;font-size: 30px;">AdminPage</h2>
+<form action="/PG_FSD_P2_Project/Admin" method="POST"> 
+<input class="submit" type="submit" value="Logout" name = "logout"/>
 
-<form action="/PG_FSD_P2_Project/Admin" method="GET"> 
+<h1 style="font-family:Gabriola; color:darkblue;font-size: 50px;">FlyAway</h1>
+<h2 style="font-family:Gabriola; color:darkblue;font-size: 30px;">AdminPage - Flight Setup</h2>
+
+
 
 <hr size = "2" color="black" />
 	<tr>
@@ -205,64 +208,42 @@ e.printStackTrace();
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 	</tr>
-<hr size = "2" color="black" />
-<h2 style="color:black;font-size: 20px;">FlightRoute setup</h2>
-
-	<tr>
-		<td> <b>Flight Name</b> </td>
-		<td>	
-			<select name = "Flight Name">
-			 <option value=""> </option>
-			<% while(resultSet3.next()){ %>
-				<option><%= resultSet3.getString("flight_name")%></option>
-	<% 	} %>
-			 				
-			</select>
-		</td>
-	</tr>
-	<br><br>
-	<tr>
-		<td> <b>Source city list</b> </td>
-		<td>	
-			<select name = "Source city">
-			 <option value=""> </option>
-			<% while(resultSet4.next()){ %>
-				<option><%= resultSet4.getString("city")%></option>
-	<% 	} %>
-			 				
-			</select>
-		</td>
-	</tr>
-	<br><br>
-	<tr>
-		<td> <b>Destination city list</b> </td>
-		<td>
-			<select name = "Destination city">
-			<option value=""> </option>
-				<% while(resultSet5.next()){ %>
-				<option><%= resultSet5.getString("city")%></option>
-	<% 	} %>
-			</select>
-		</td>
-	</tr>
-	<br><br>
-	<tr>
-		<td> <b>Price</b> </td>
-		<td> <input type="number" min="0.01" step="0.01" max="2500" /> </td>
-	</tr>
-	<br><br>
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;<input type="submit" value="Submit" name="save">
-		</td>
-	</tr>
 	
-		<tr>
+		<p>${message}</p>
+<c:remove var="message" scope="session" />
+
+<hr size = "2" color="black" />
+<h2 style="color:black;font-size: 15px;">Click below to setup flight route and schedule</h2>
+	<tr>
 		<td>&nbsp;</td>
-		<td>&nbsp;<input type="reset" value="Clear" name="clear">
+		<td>&nbsp;<input type="submit" value="Flight Route and Schedule Setup" name="next">
 		</td>
 	</tr>
 
+<style>
+.submit
+{
+    float: right;
+    border: none;
+    background: #EDEDED;
+    color: arial;
+    font-size: 20px;
+    padding: 5px 10px;
+    top: 10px;
+	right: 10px;
+}
+.submit:hover
+{
+    background: red;
+    cursor: pointer;
+}
+</style>
+
+
+
+
+
+	
 </body>
 </form>
 </html>

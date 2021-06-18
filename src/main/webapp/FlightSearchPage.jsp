@@ -48,46 +48,20 @@ e.printStackTrace();
 </head>
 <body style="background-color:mintcream;">
 <h1 style="font-family:Gabriola; color:darkblue;font-size: 50px;"> FlyAway</h1>
-<h4 style="color:darkblue"> Airline Booking Portal</h3>
+<h4 style="color:darkblue"> Airline Booking Portal</h4>
 
-<form method="get" action="/PG_FSD_P2_Project/flights-display">
-<table border=2 style="color:brown">
+<form action="FlightsDisplay.jsp" method="post">
+<!--  <table border=2 style="color:brown"> -->
+
+<hr size = "2" color="brown" />
 <tbody>
 
-	<tr>
-		<td> <input type = "radio" name="Typeoftrip" value="Roundtrip"> Roundtrip &nbsp;
-		     <input type = "radio" name="Typeoftrip" value="One-way"> One-way
-		</td>
-	</tr>
-	
-	<tr>
-		<td> <b>Number of Travelers:</b></td>
-		<td> <input type = "checkbox" name="Travelers" value="Adult"> Adult 18+ &nbsp;
-				<select name = "Travelers">
-					<option value="1"> 1 </option>
-					<option value="2"> 2 </option>
-					<option value="3"> 3 </option>
-				</select>
-		     <input type = "checkbox" name="Travelers" value="Youth"> Youth 12-17 &nbsp;
-		     	<select name = "Travelers">
-					<option value="1"> 1 </option>
-					<option value="2"> 2 </option>
-					<option value="3"> 3 </option>
-				</select>
-		     <input type = "checkbox" name="Travelers" value="Child"> Child 11 & below 
-		     	<select name = "Travelers">
-					<option value="1"> 1 </option>
-					<option value="2"> 2 </option>
-					<option value="3"> 3 </option>
-				</select>
-		</td>
-	</tr>
 	<div></div>
-
+	
 	<tr>
 		<td> <b>Leaving from:</b> </td>
 		<td>	
-			<select name = "Leaving from">
+			<select name = "Leaving from" required>
 			 <option value=""> </option>
 			<% while(resultSet.next()){ %>
 				<option><%= resultSet.getString("city")%></option>
@@ -100,7 +74,7 @@ e.printStackTrace();
 	<tr>
 		<td> <b>Going to:</b> </td>
 		<td>
-			<select name = "Going to">
+			<select name = "Going to" required>
 			<option value=""> </option>
 				<% while(resultSet1.next()){ %>
 				<option><%= resultSet1.getString("city")%></option>
@@ -108,26 +82,31 @@ e.printStackTrace();
 			</select>
 		</td>
 	</tr>
-	
+	<br><br>
 	<tr>
 		<td> <b>Departure date:</b> </td>
-		<td> <input type = "date">  
+		<td> <input type = "date" name = "departuredate" min="2021-06-17" required>  
 		</td>
 	</tr>
 
 	<tr>
 		<td> <b>Return date:</b> </td>
-		<td> <input type = "date">  
+		<td> <input type = "date" name = "returndate" min="2021-06-17" required>  
 		</td>
 	</tr>
-
+	<br><br>
+	<tr>
+		<td> <b>Number of people traveling</b> </td>
+		<td> <input type="number" min="1" step="1" max="100" name="travelers" required/> </td>
+	</tr>
+	<br><br>
 	<tr>
 		<td>&nbsp;</td>
 		<td><input type="submit" value="Search" name="btnsearch">
 		&nbsp; <input type="submit" value="Clear" name="btnclear">
 		</td>
 	</tr>
-	
+
 </tbody>
 
 </table>
